@@ -21,7 +21,11 @@
 							
 								<div class="card-title" style="margin-top: 4px; background:white; opacity: 0.7; "> <h5> <?php echo $row["gTitle"]; ?> </h5></div>
 						</div>
-						<a href="#" class="btn btn-primary"> <?php echo $row["gprice"]." INR ";  ?></a>
+						<form method="post" action="game.php">
+							<input type="hidden" name="gId" value="<?php echo($row["gId"]) ?>" > 
+							<input class="btn btn-primary" style="margin: 4px" type="submit" value="BUY @<?php echo $row["gprice"]." INR "; ?>">
+						</form>
+						
 						
 						</div>
 

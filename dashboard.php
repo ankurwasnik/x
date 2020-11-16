@@ -51,7 +51,7 @@
 				<?php 
 
 				include 'db.php';
-				$query = "SELECT * FROM reviews " ;
+				$query = "SELECT * FROM reviews order by rDate desc limit 5" ;
 				$result = mysqli_query($con , $query) ;
 
 				if (mysqli_num_rows($result)>0) {
