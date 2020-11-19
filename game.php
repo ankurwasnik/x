@@ -4,6 +4,7 @@
 	$id = $_REQUEST["gId"];
 	$query = "SELECT * FROM gstore WHERE gId=".$id ." limit 1" ;
 	$result= mysqli_query($con,$query);
+	$gCategory="action";
 
 	function orderedGame(){
 		echo "<script> alert('Your game is ordered !') </script>";
@@ -24,6 +25,7 @@
 				//echo "$row[4]"; //image src
 				//echo "$row[5]"; //category
 				//echo "$row[6]"; //rating
+				$gCategory=$row[5];
 
 
 		?>
@@ -53,5 +55,37 @@
 
 	</div>
 </div>
+<div class="divider"></div>
+<div class="container" style="margin-top: 5%">
+	<h3 style="margin-left:32px; margin-top: 16px;">Suggested Games</h3>
+			<div class="card-columns" style="margin:16px;  align-content: center; align-self: center;" > <!-- top 3 games -->
+				<?php 
+					$query="SELECT * from gstore where gCategory='$gCategory'order by gRating desc limit 5 ";
+					$result = mysqli_query($con,$query);
+					if (mysqli_num_rows($result)>0) {
+						while ($row=mysqli_fetch_array($result)) {
+				?>
 
+					<div class="card bg-light text-dark" > <!-- card 3-->
+						<div class="card-body">
+							<form method="post" action="game.php">
+							<input type="hidden" name="gId" value="<?php echo($row[0])?>">
+							<img src="<?php echo($row[4]) ?>" class="card-img-top img-responsive" alt="game image" >
+							<div class="card-title" style="margin-top: 4px; background:white; opacity: 0.7; "> <h5>Cyberpunk </h5></div>
+							<input class="btn btn-primary" type="submit" value=" <?php echo($row[3])?>">
+							</form>
+							
+						</div>
+					
+						
+					</div>
+
+				<?php
+						}
+					}
+				?>																		
+			</div>
+</div>
+
+			
 <?php include 'footer.php';  ?>

@@ -20,20 +20,24 @@ include("auth_session.php");
 <body >
 	<!-- header -->
 	<div class="header">
-	  <h1>Welcome <?php echo $_SESSION["username"]; ?></h1>
+	  <h5>Welcome <?php echo $_SESSION["username"]; ?></h5>
 	</div>
 	<!--navigation bar -->
 	<div class="topnav">
-	  <a href="dashboard.php">Home</a>
+	  <a href="homepage.php">Home</a>
 	  <a href="store.php">Store</a>
-	  <a href="#" >Today's Deal</a>
-	  <a href="logout.php" >Logout</a>
+	  <a href="myorders.php">My Orders</a>
+	  <?php 
+			if (isset($_SESSION['username'])) { 
+		?>
+						  <a href="logout.php" >Logout</a>
 
-	  <form>
-	  	<input type="submit"  value="submit">
-	  	<input type="search" placeholder="Search" name="searchQuery">
-	  	
-	  </form>
+		<?php 
+			}
+		?>
+
+	  <a href="adminlogin.php" style="float: right; color: red"> Admin</a>
+
 	  
 	</div>
 

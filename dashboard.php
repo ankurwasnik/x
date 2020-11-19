@@ -17,7 +17,7 @@
 						<img src="cyberpunk.jpg" class="card-img-top img-responsive" alt="game image">
 						<div class="card-title" style="margin-top: 4px; background:white; opacity: 0.7; "> <h5>Cyberpunk </h5></div>
 					</div>
-					<a href="#btnclicked" class="btn btn-primary">Buy</a>
+				
 					
 				</div>
 					
@@ -28,7 +28,7 @@
 						
 							<div class="card-title" style="margin-top: 4px; background:white; opacity: 0.7; "> <h5>Assassins Creed Valhalla </h5></div>
 					</div>
-					<a href="#" class="btn btn-primary">Buy</a>
+						
 					
 				</div>
 				
@@ -37,11 +37,12 @@
 						<img src="need_for_speed.jpg" class="card-img-top img-responsive" alt="game image">
 							<div class="card-title" style="margin-top: 4px; background:white; opacity: 0.7; "> <h5>Need For Speed </h5></div>						
 					</div>
-					<a href="#" class="btn btn-primary">Buy</a>
+					
 					
 				</div>
 				
 			</div>
+
 
 		<div class="container" style="margin-top: 16px;margin-bottom: 64px;"> <!-- recent review sections -->
 			<h3 style="margin-top: 32px;margin-left: 16px; padding: 4px;"> Recent Game Reviews</h3>	
@@ -51,7 +52,7 @@
 				<?php 
 
 				include 'db.php';
-				$query = "SELECT * FROM reviews order by rDate desc limit 5" ;
+				$query = "SELECT * FROM reviews order by rDate desc limit 3" ;
 				$result = mysqli_query($con , $query) ;
 
 				if (mysqli_num_rows($result)>0) {

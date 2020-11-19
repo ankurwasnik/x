@@ -35,4 +35,3 @@
     </div>
     <input type="submit" name="">
 </form>
-<?php  echo "<script>  alert('You reviewed game Successfully !') </script>"; ?>

@@ -56,6 +56,7 @@
         <input type="checkbox" name="rememberMe" >Remember Me <br>
         <input type="submit" value="Login" name="submit" class="login-button"/>
         <p class="link"><a href="registration.php">New Registration</a></p>
+        <p class="link"><a href="adminlogin.php"> Admin Login? </a></p>
   </form>
 <?php
     }
